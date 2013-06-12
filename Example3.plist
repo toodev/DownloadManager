@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>vid</key>
+		<integer>1</integer>
+		<key>filename</key>
+		<string>pdfdocument.pdf</string>
+		<key>icon</key>
+		<string>chimica.png</string>
+		<key>docId</key>
+		<integer>57438596071856</integer>
+		<key>currency</key>
+		<string>$</string>
+		<key>fee</key>
+		<string>111.98</string>
+		<key>version</key>
+		<string>2nd edition</string>
+		<key>title</key>
+		<string>Abstract Algebra Manual: Problems and Solutions</string>
+		<key>author</key>
+		<string>Ayman Badawi</string>
+	</dict>
+	<dict>
+		<key>vid</key>
+		<integer>1</integer>
+		<key>filename</key>
+		<string>pdfdocument2.pdf</string>
+		<key>icon</key>
+		<string>fisica.png</string>
+		<key>docId</key>
+		<integer>57438596071857</integer>
+		<key>title</key>
+		<string>Il mistero della grotta scomparsa</string>
+		<key>author</key>
+		<string>Alberto Sigismondi</string>
+		<key>version</key>
+		<string>prima edizione</string>
+	</dict>
+	<dict>
+		<key>vid</key>
+		<integer>1</integer>
+		<key>filename</key>
+		<string>pdfdocument3.pdf</string>
+		<key>icon</key>
+		<string>matematica.png</string>
+		<key>docId</key>
+		<integer>57438596071858</integer>
+		<key>fee</key>
+		<real>12.5</real>
+		<key>title</key>
+		<string>Le origini della specie</string>
+		<key>author</key>
+		<string>Daniele Poggi</string>
+		<key>version</key>
+		<string>1st edition</string>
+	</dict>
+	<dict>
+		<key>vid</key>
+		<integer>1</integer>
+		<key>filename</key>
+		<string>CiccioPasticcio.pdf</string>
+		<key>docId</key>
+		<integer>57438596071859</integer>
+		<key>title</key>
+		<string>Example of PDF links</string>
+		<key>author</key>
+		<string>Toodev</string>
+	</dict>
+</array>
+</plist>

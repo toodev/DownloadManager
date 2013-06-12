@@ -1,0 +1,24 @@
+//
+// Prefix header for all source files of the 'CocoaTouchStaticLibrary' target in the 'CocoaTouchStaticLibrary' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+#if DEBUG
+#define TDLog(args...)    NSLog( @"%@", [NSString stringWithFormat: args])
+#define LogMethod() NSLog(@"%s logged method call: -[%@ %s] (line %d)", _cmd, self, _cmd, __LINE__)
+#if PRINT_DEPRECATED
+#define WarnDeprecated() NSLog(@"***** WARNING: %s deprecated method call: -[%@ %s] (line %d)", _cmd, self, _cmd, __LINE__)
+#else
+#define WarnDeprecated()
+#endif
+#else  
+// DEBUG not defined:
+
+#define TDLog(args...)    // do nothing.
+#define LogMethod() 
+#define WarnDeprecated() 
+#define NS_BLOCK_ASSERTIONS 1
+#endif

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>author</key>
+		<string>Ayman Badawi</string>
+		<key>currency</key>
+		<string>$</string>
+		<key>docId</key>
+		<integer>57438596071856</integer>
+		<key>fee</key>
+		<string>111.98</string>
+		<key>filename</key>
+		<string>pdfdocument.pdf</string>
+		<key>icon</key>
+		<string>chimica.png</string>
+		<key>title</key>
+		<string>Abstract Algebra Manual: Problems and Solutions</string>
+		<key>version</key>
+		<string>2nd edition</string>
+		<key>vid</key>
+		<integer>1</integer>
+		<key>description</key>
+		<string>Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet</string>
+		<key>update</key>
+		<string>2011-04-18T23:24:38Z</string>
+		<key>preview</key>
+		<string>pdfdocument_preview.pdf</string>
+	</dict>
+	<dict>
+		<key>author</key>
+		<string>Alberto Sigismondi</string>
+		<key>docId</key>
+		<integer>57438596071857</integer>
+		<key>filename</key>
+		<string>pdfdocument2.pdf</string>
+		<key>icon</key>
+		<string>fisica.png</string>
+		<key>title</key>
+		<string>Il mistero della grotta scomparsa</string>
+		<key>version</key>
+		<string>prima edizione</string>
+		<key>vid</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>author</key>
+		<string>Daniele Poggi</string>
+		<key>docId</key>
+		<integer>57438596071858</integer>
+		<key>fee</key>
+		<real>12.5</real>
+		<key>filename</key>
+		<string>pdfdocument3.pdf</string>
+		<key>icon</key>
+		<string>matematica.png</string>
+		<key>title</key>
+		<string>Le origini della specie</string>
+		<key>version</key>
+		<string>1st edition</string>
+		<key>vid</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>author</key>
+		<string>Toodev</string>
+		<key>docId</key>
+		<integer>57438596071859</integer>
+		<key>filename</key>
+		<string>CiccioPasticcio.pdf</string>
+		<key>title</key>
+		<string>Example of PDF links</string>
+		<key>vid</key>
+		<integer>1</integer>
+	</dict>
+</array>
+</plist>
