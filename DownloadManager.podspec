@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source        = { :git  => 'git@github.com:toodev/DownloadManager.git' }
   s.license       = { :type => 'Public',
                       :text => %Q|All rights reserved| }
-  
+  s.source_files = '*.{h,m}'
   s.dependency 'ASIHTTPRequest'
   s.dependency 'ZipArchive'
   s.requires_arc = false
