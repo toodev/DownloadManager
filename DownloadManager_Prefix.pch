@@ -3,8 +3,11 @@
 //
 
 #ifdef __OBJC__
-    #import <Foundation/Foundation.h>
+    #import <Foundation/Foundation.h> 
+    #import "DDXML.h"
 #endif
+
+#define DEBUG FALSE
 
 #if DEBUG
 #define TDLog(args...)    NSLog( @"%@", [NSString stringWithFormat: args])

@@ -7,40 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		138A3D10F0E846D9AB8090B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0029D128FE00447588BEDC1C /* libPods.a */; };
 		3B614BA911B2A9EB00C6FEE6 /* TDMatchResultCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B614BA811B2A9EB00C6FEE6 /* TDMatchResultCase.h */; };
 		3BCBF17D11B13CB20098F6B7 /* LocalResourcesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCBF17C11B13CB20098F6B7 /* LocalResourcesTest.m */; };
 		AA747D9F0F9514B9006C5449 /* DownloadManager_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* DownloadManager_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		CE01A78A13B5984300D47296 /* TDDownloadManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CE01A78913B5984300D47296 /* TDDownloadManagerDelegate.h */; };
 		CE01A78D13B5AC8800D47296 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE01A78C13B5AC8800D47296 /* libz.dylib */; };
-		CE01A78E13B5ACAF00D47296 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = CECD480113B38B1300B81739 /* ioapi.c */; };
-		CE01A78F13B5ACAF00D47296 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = CECD480313B38B1300B81739 /* mztools.c */; };
-		CE01A79013B5ACAF00D47296 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = CECD480513B38B1300B81739 /* unzip.c */; };
-		CE01A79113B5ACAF00D47296 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = CECD480713B38B1300B81739 /* zip.c */; };
-		CE01A79213B5ACAF00D47296 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECD480A13B38B1300B81739 /* ZipArchive.mm */; };
 		CE1DB84011C643D8000A7AE9 /* TDDeleteOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1DB83E11C643D8000A7AE9 /* TDDeleteOperation.h */; };
 		CE1DB84111C643D8000A7AE9 /* TDDeleteOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1DB83F11C643D8000A7AE9 /* TDDeleteOperation.m */; };
 		CE2B44B713C3436400AD4A5B /* InAppPurchaseManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2B44B513C3436400AD4A5B /* InAppPurchaseManager.h */; settings = {ATTRIBUTES = (); }; };
 		CE2B44B813C3436400AD4A5B /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B44B613C3436400AD4A5B /* InAppPurchaseManager.m */; };
-		CE46D89813311DA700F60C7B /* DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = CE46D88A13311DA700F60C7B /* DDXML.h */; };
-		CE46D89913311DA700F60C7B /* DDXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = CE46D88B13311DA700F60C7B /* DDXMLDocument.h */; };
-		CE46D89A13311DA700F60C7B /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CE46D88C13311DA700F60C7B /* DDXMLDocument.m */; };
-		CE46D89B13311DA700F60C7B /* DDXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = CE46D88D13311DA700F60C7B /* DDXMLElement.h */; };
-		CE46D89C13311DA700F60C7B /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CE46D88E13311DA700F60C7B /* DDXMLElement.m */; };
-		CE46D89D13311DA700F60C7B /* DDXMLElementAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE46D88F13311DA700F60C7B /* DDXMLElementAdditions.h */; };
-		CE46D89E13311DA700F60C7B /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE46D89013311DA700F60C7B /* DDXMLElementAdditions.m */; };
-		CE46D89F13311DA700F60C7B /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = CE46D89113311DA700F60C7B /* DDXMLNode.h */; };
-		CE46D8A013311DA700F60C7B /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE46D89213311DA700F60C7B /* DDXMLNode.m */; };
-		CE46D8A113311DA700F60C7B /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CE46D89313311DA700F60C7B /* DDXMLPrivate.h */; };
 		CE46D8A713311F9000F60C7B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE46D8A613311F9000F60C7B /* libxml2.dylib */; };
-		CE4CDEF8133531DF006F07B9 /* NSArrayAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4CDEF6133531DE006F07B9 /* NSArrayAdditions.h */; };
-		CE4CDEF9133531DF006F07B9 /* NSArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4CDEF7133531DF006F07B9 /* NSArrayAdditions.m */; };
 		CE4E011D11B410D800D5140B /* TDConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4E011B11B410D800D5140B /* TDConnectionOperation.h */; };
 		CE4E011E11B410D800D5140B /* TDConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4E011C11B410D800D5140B /* TDConnectionOperation.m */; };
 		CE4E012311B4114F00D5140B /* TDConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4E012211B4114F00D5140B /* TDConnectionDelegate.h */; };
 		CE502AC511CB8083007BB253 /* TDSort.h in Headers */ = {isa = PBXBuildFile; fileRef = CE502AC411CB8083007BB253 /* TDSort.h */; };
 		CE5D80AF14D1554E00788A99 /* TDDownloadConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = CE5D80AD14D1554E00788A99 /* TDDownloadConfig.h */; };
 		CE5D80B014D1554E00788A99 /* TDDownloadConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5D80AE14D1554E00788A99 /* TDDownloadConfig.m */; };
+		CE65EB9A17698DFC005EB0E3 /* DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65EB8A17698DFC005EB0E3 /* DDXML.h */; };
+		CE65EB9B17698DFC005EB0E3 /* DDXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65EB8B17698DFC005EB0E3 /* DDXMLDocument.h */; };
+		CE65EB9C17698DFC005EB0E3 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB8C17698DFC005EB0E3 /* DDXMLDocument.m */; };
+		CE65EB9D17698DFC005EB0E3 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB8C17698DFC005EB0E3 /* DDXMLDocument.m */; };
+		CE65EB9E17698DFC005EB0E3 /* DDXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65EB8D17698DFC005EB0E3 /* DDXMLElement.h */; };
+		CE65EB9F17698DFC005EB0E3 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB8E17698DFC005EB0E3 /* DDXMLElement.m */; };
+		CE65EBA017698DFC005EB0E3 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB8E17698DFC005EB0E3 /* DDXMLElement.m */; };
+		CE65EBA117698DFC005EB0E3 /* DDXMLElementAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65EB8F17698DFC005EB0E3 /* DDXMLElementAdditions.h */; };
+		CE65EBA217698DFC005EB0E3 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB9017698DFC005EB0E3 /* DDXMLElementAdditions.m */; };
+		CE65EBA317698DFC005EB0E3 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB9017698DFC005EB0E3 /* DDXMLElementAdditions.m */; };
+		CE65EBA417698DFC005EB0E3 /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65EB9117698DFC005EB0E3 /* DDXMLNode.h */; };
+		CE65EBA517698DFC005EB0E3 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB9217698DFC005EB0E3 /* DDXMLNode.m */; };
+		CE65EBA617698DFC005EB0E3 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB9217698DFC005EB0E3 /* DDXMLNode.m */; };
+		CE65EBA717698DFC005EB0E3 /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65EB9317698DFC005EB0E3 /* DDXMLPrivate.h */; };
+		CE65EBAB17698DFC005EB0E3 /* NSArrayAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65EB9617698DFC005EB0E3 /* NSArrayAdditions.h */; };
+		CE65EBAC17698DFC005EB0E3 /* NSArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB9717698DFC005EB0E3 /* NSArrayAdditions.m */; };
+		CE65EBAD17698DFC005EB0E3 /* NSArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB9717698DFC005EB0E3 /* NSArrayAdditions.m */; };
+		CE65EBAE17698DFC005EB0E3 /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE65EB9817698DFC005EB0E3 /* NSStringAdditions.h */; };
+		CE65EBAF17698DFC005EB0E3 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB9917698DFC005EB0E3 /* NSStringAdditions.m */; };
+		CE65EBB017698DFC005EB0E3 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE65EB9917698DFC005EB0E3 /* NSStringAdditions.m */; };
 		CE66335313C600B2005F642D /* TDPurchaseDownloadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CE66335213C600B2005F642D /* TDPurchaseDownloadDelegate.h */; };
 		CE8101D013572A5E00B5D9DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8101CF13572A5E00B5D9DB /* UIKit.framework */; };
 		CE8101D313572B9D00B5D9DB /* TDPurchaseDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = CE8101D113572B9D00B5D9DB /* TDPurchaseDownload.h */; };
@@ -54,9 +58,6 @@
 		CEC0D24711B47AB60040B20E /* TDRemoteIndexDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CEC0D24611B47AB60040B20E /* TDRemoteIndexDelegate.h */; };
 		CECD47FC13B389C100B81739 /* TDDownloadUnzipOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CECD47FA13B389C100B81739 /* TDDownloadUnzipOperation.h */; };
 		CECD47FD13B389C100B81739 /* TDDownloadUnzipOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD47FB13B389C100B81739 /* TDDownloadUnzipOperation.m */; };
-		CECD481413B38B1300B81739 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = CECD480913B38B1300B81739 /* ZipArchive.h */; };
-		CEDAB028135690D400BEC842 /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CEDAB026135690D400BEC842 /* NSStringAdditions.h */; };
-		CEDAB029135690D400BEC842 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDAB027135690D400BEC842 /* NSStringAdditions.m */; };
 		CEE8D3F711AA9A75004AFC50 /* libDownloadManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libDownloadManager.a */; };
 		CEE8D54611AAA98C004AFC50 /* TDMatchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE8D54511AAA98C004AFC50 /* TDMatchResults.m */; };
 		CEE8D54711AAA98C004AFC50 /* TDMatchResults.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE8D54411AAA98C004AFC50 /* TDMatchResults.h */; };
@@ -81,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0029D128FE00447588BEDC1C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C577AA3D1A427389484A53 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		3B614BA811B2A9EB00C6FEE6 /* TDMatchResultCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMatchResultCase.h; sourceTree = "<group>"; };
 		3BCBF17B11B13CB20098F6B7 /* LocalResourcesTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalResourcesTest.h; sourceTree = "<group>"; };
 		3BCBF17C11B13CB20098F6B7 /* LocalResourcesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalResourcesTest.m; sourceTree = "<group>"; };
@@ -92,25 +95,27 @@
 		CE1DB83F11C643D8000A7AE9 /* TDDeleteOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDeleteOperation.m; sourceTree = "<group>"; };
 		CE2B44B513C3436400AD4A5B /* InAppPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseManager.h; sourceTree = "<group>"; };
 		CE2B44B613C3436400AD4A5B /* InAppPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseManager.m; sourceTree = "<group>"; };
-		CE46D88A13311DA700F60C7B /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDXML.h; path = KissXML/DDXML.h; sourceTree = "<group>"; };
-		CE46D88B13311DA700F60C7B /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDXMLDocument.h; path = KissXML/DDXMLDocument.h; sourceTree = "<group>"; };
-		CE46D88C13311DA700F60C7B /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDXMLDocument.m; path = KissXML/DDXMLDocument.m; sourceTree = "<group>"; };
-		CE46D88D13311DA700F60C7B /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDXMLElement.h; path = KissXML/DDXMLElement.h; sourceTree = "<group>"; };
-		CE46D88E13311DA700F60C7B /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDXMLElement.m; path = KissXML/DDXMLElement.m; sourceTree = "<group>"; };
-		CE46D88F13311DA700F60C7B /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDXMLElementAdditions.h; path = KissXML/DDXMLElementAdditions.h; sourceTree = "<group>"; };
-		CE46D89013311DA700F60C7B /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDXMLElementAdditions.m; path = KissXML/DDXMLElementAdditions.m; sourceTree = "<group>"; };
-		CE46D89113311DA700F60C7B /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDXMLNode.h; path = KissXML/DDXMLNode.h; sourceTree = "<group>"; };
-		CE46D89213311DA700F60C7B /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDXMLNode.m; path = KissXML/DDXMLNode.m; sourceTree = "<group>"; };
-		CE46D89313311DA700F60C7B /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDXMLPrivate.h; path = KissXML/DDXMLPrivate.h; sourceTree = "<group>"; };
 		CE46D8A613311F9000F60C7B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		CE4CDEF6133531DE006F07B9 /* NSArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditions.h; sourceTree = "<group>"; };
-		CE4CDEF7133531DF006F07B9 /* NSArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditions.m; sourceTree = "<group>"; };
 		CE4E011B11B410D800D5140B /* TDConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDConnectionOperation.h; sourceTree = "<group>"; };
 		CE4E011C11B410D800D5140B /* TDConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDConnectionOperation.m; sourceTree = "<group>"; };
 		CE4E012211B4114F00D5140B /* TDConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDConnectionDelegate.h; sourceTree = "<group>"; };
 		CE502AC411CB8083007BB253 /* TDSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSort.h; sourceTree = "<group>"; };
 		CE5D80AD14D1554E00788A99 /* TDDownloadConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDownloadConfig.h; sourceTree = "<group>"; };
 		CE5D80AE14D1554E00788A99 /* TDDownloadConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDownloadConfig.m; sourceTree = "<group>"; };
+		CE65EB8A17698DFC005EB0E3 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		CE65EB8B17698DFC005EB0E3 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		CE65EB8C17698DFC005EB0E3 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		CE65EB8D17698DFC005EB0E3 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		CE65EB8E17698DFC005EB0E3 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		CE65EB8F17698DFC005EB0E3 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		CE65EB9017698DFC005EB0E3 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		CE65EB9117698DFC005EB0E3 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		CE65EB9217698DFC005EB0E3 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		CE65EB9317698DFC005EB0E3 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
+		CE65EB9617698DFC005EB0E3 /* NSArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditions.h; sourceTree = "<group>"; };
+		CE65EB9717698DFC005EB0E3 /* NSArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditions.m; sourceTree = "<group>"; };
+		CE65EB9817698DFC005EB0E3 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		CE65EB9917698DFC005EB0E3 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
 		CE66335213C600B2005F642D /* TDPurchaseDownloadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPurchaseDownloadDelegate.h; sourceTree = "<group>"; };
 		CE7BBCE711B90A8800D71669 /* Example3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Example3.plist; sourceTree = "<group>"; };
 		CE8101CF13572A5E00B5D9DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -129,20 +134,7 @@
 		CEC0D24611B47AB60040B20E /* TDRemoteIndexDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRemoteIndexDelegate.h; sourceTree = "<group>"; };
 		CECD47FA13B389C100B81739 /* TDDownloadUnzipOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDownloadUnzipOperation.h; sourceTree = "<group>"; };
 		CECD47FB13B389C100B81739 /* TDDownloadUnzipOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDownloadUnzipOperation.m; sourceTree = "<group>"; };
-		CECD480013B38B1300B81739 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
-		CECD480113B38B1300B81739 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
-		CECD480213B38B1300B81739 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
-		CECD480313B38B1300B81739 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
-		CECD480413B38B1300B81739 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
-		CECD480513B38B1300B81739 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
-		CECD480613B38B1300B81739 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
-		CECD480713B38B1300B81739 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
-		CECD480813B38B1300B81739 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
-		CECD480913B38B1300B81739 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
-		CECD480A13B38B1300B81739 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		CED721AA135CFF4D006630BC /* Example4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Example4.plist; sourceTree = "<group>"; };
-		CEDAB026135690D400BEC842 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringAdditions.h; path = KissXML/NSStringAdditions.h; sourceTree = "<group>"; };
-		CEDAB027135690D400BEC842 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringAdditions.m; path = KissXML/NSStringAdditions.m; sourceTree = "<group>"; };
 		CEDD67BE11AE6CAA00254DDB /* Example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Example.plist; sourceTree = "<group>"; };
 		CEE8D54411AAA98C004AFC50 /* TDMatchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMatchResults.h; sourceTree = "<group>"; };
 		CEE8D54511AAA98C004AFC50 /* TDMatchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMatchResults.m; sourceTree = "<group>"; };
@@ -176,6 +168,7 @@
 				CE8101D013572A5E00B5D9DB /* UIKit.framework in Frameworks */,
 				CE46D8A713311F9000F60C7B /* libxml2.dylib in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				138A3D10F0E846D9AB8090B4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +192,7 @@
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				CE8DD86311AA8ADC0073DA3A /* DMTests-Info.plist */,
+				05C577AA3D1A427389484A53 /* Pods.xcconfig */,
 			);
 			name = DownloadManager;
 			sourceTree = "<group>";
@@ -211,6 +205,7 @@
 				CE8101CF13572A5E00B5D9DB /* UIKit.framework */,
 				CE8DD82511AA8A4E0073DA3A /* CoreFoundation.framework */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				0029D128FE00447588BEDC1C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,9 +213,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CE65EB8917698DFC005EB0E3 /* KissXML */,
 				CE2B44B413C3436400AD4A5B /* Purchase */,
-				CECD47FE13B38B1300B81739 /* ZipArchive */,
-				CE46D88913311D9300F60C7B /* KissXML */,
 				CE4E012011B4111B00D5140B /* Model */,
 				CE502AC311CB803F007BB253 /* Sorting */,
 				CE4E012111B4112900D5140B /* Controller */,
@@ -264,27 +258,6 @@
 				CE89710A13C60B3E00EE14F2 /* InAppPurchaseDataSource.h */,
 			);
 			path = Purchase;
-			sourceTree = "<group>";
-		};
-		CE46D88913311D9300F60C7B /* KissXML */ = {
-			isa = PBXGroup;
-			children = (
-				CE46D88A13311DA700F60C7B /* DDXML.h */,
-				CE46D88B13311DA700F60C7B /* DDXMLDocument.h */,
-				CE46D88C13311DA700F60C7B /* DDXMLDocument.m */,
-				CE46D88D13311DA700F60C7B /* DDXMLElement.h */,
-				CE46D88E13311DA700F60C7B /* DDXMLElement.m */,
-				CE46D88F13311DA700F60C7B /* DDXMLElementAdditions.h */,
-				CE46D89013311DA700F60C7B /* DDXMLElementAdditions.m */,
-				CE46D89113311DA700F60C7B /* DDXMLNode.h */,
-				CE46D89213311DA700F60C7B /* DDXMLNode.m */,
-				CE46D89313311DA700F60C7B /* DDXMLPrivate.h */,
-				CE4CDEF6133531DE006F07B9 /* NSArrayAdditions.h */,
-				CE4CDEF7133531DF006F07B9 /* NSArrayAdditions.m */,
-				CEDAB026135690D400BEC842 /* NSStringAdditions.h */,
-				CEDAB027135690D400BEC842 /* NSStringAdditions.m */,
-			);
-			name = KissXML;
 			sourceTree = "<group>";
 		};
 		CE4E011F11B4110300D5140B /* Download */ = {
@@ -334,6 +307,27 @@
 			name = Sorting;
 			sourceTree = "<group>";
 		};
+		CE65EB8917698DFC005EB0E3 /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				CE65EB8A17698DFC005EB0E3 /* DDXML.h */,
+				CE65EB8B17698DFC005EB0E3 /* DDXMLDocument.h */,
+				CE65EB8C17698DFC005EB0E3 /* DDXMLDocument.m */,
+				CE65EB8D17698DFC005EB0E3 /* DDXMLElement.h */,
+				CE65EB8E17698DFC005EB0E3 /* DDXMLElement.m */,
+				CE65EB8F17698DFC005EB0E3 /* DDXMLElementAdditions.h */,
+				CE65EB9017698DFC005EB0E3 /* DDXMLElementAdditions.m */,
+				CE65EB9117698DFC005EB0E3 /* DDXMLNode.h */,
+				CE65EB9217698DFC005EB0E3 /* DDXMLNode.m */,
+				CE65EB9317698DFC005EB0E3 /* DDXMLPrivate.h */,
+				CE65EB9617698DFC005EB0E3 /* NSArrayAdditions.h */,
+				CE65EB9717698DFC005EB0E3 /* NSArrayAdditions.m */,
+				CE65EB9817698DFC005EB0E3 /* NSStringAdditions.h */,
+				CE65EB9917698DFC005EB0E3 /* NSStringAdditions.m */,
+			);
+			path = KissXML;
+			sourceTree = "<group>";
+		};
 		CE8DD74711AA6C230073DA3A /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,32 +361,6 @@
 			name = RemoteIndex;
 			sourceTree = "<group>";
 		};
-		CECD47FE13B38B1300B81739 /* ZipArchive */ = {
-			isa = PBXGroup;
-			children = (
-				CECD47FF13B38B1300B81739 /* minizip */,
-				CECD480913B38B1300B81739 /* ZipArchive.h */,
-				CECD480A13B38B1300B81739 /* ZipArchive.mm */,
-			);
-			path = ZipArchive;
-			sourceTree = "<group>";
-		};
-		CECD47FF13B38B1300B81739 /* minizip */ = {
-			isa = PBXGroup;
-			children = (
-				CECD480013B38B1300B81739 /* crypt.h */,
-				CECD480113B38B1300B81739 /* ioapi.c */,
-				CECD480213B38B1300B81739 /* ioapi.h */,
-				CECD480313B38B1300B81739 /* mztools.c */,
-				CECD480413B38B1300B81739 /* mztools.h */,
-				CECD480513B38B1300B81739 /* unzip.c */,
-				CECD480613B38B1300B81739 /* unzip.h */,
-				CECD480713B38B1300B81739 /* zip.c */,
-				CECD480813B38B1300B81739 /* zip.h */,
-			);
-			path = minizip;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -416,20 +384,19 @@
 				CEC0D24711B47AB60040B20E /* TDRemoteIndexDelegate.h in Headers */,
 				CE1DB84011C643D8000A7AE9 /* TDDeleteOperation.h in Headers */,
 				CE502AC511CB8083007BB253 /* TDSort.h in Headers */,
-				CE46D89813311DA700F60C7B /* DDXML.h in Headers */,
-				CE46D89913311DA700F60C7B /* DDXMLDocument.h in Headers */,
-				CE46D89B13311DA700F60C7B /* DDXMLElement.h in Headers */,
-				CE46D89D13311DA700F60C7B /* DDXMLElementAdditions.h in Headers */,
-				CE46D89F13311DA700F60C7B /* DDXMLNode.h in Headers */,
-				CE46D8A113311DA700F60C7B /* DDXMLPrivate.h in Headers */,
-				CE4CDEF8133531DF006F07B9 /* NSArrayAdditions.h in Headers */,
-				CEDAB028135690D400BEC842 /* NSStringAdditions.h in Headers */,
 				CE8101D313572B9D00B5D9DB /* TDPurchaseDownload.h in Headers */,
 				CECD47FC13B389C100B81739 /* TDDownloadUnzipOperation.h in Headers */,
-				CECD481413B38B1300B81739 /* ZipArchive.h in Headers */,
 				CE01A78A13B5984300D47296 /* TDDownloadManagerDelegate.h in Headers */,
 				CE66335313C600B2005F642D /* TDPurchaseDownloadDelegate.h in Headers */,
 				CE5D80AF14D1554E00788A99 /* TDDownloadConfig.h in Headers */,
+				CE65EB9A17698DFC005EB0E3 /* DDXML.h in Headers */,
+				CE65EB9B17698DFC005EB0E3 /* DDXMLDocument.h in Headers */,
+				CE65EB9E17698DFC005EB0E3 /* DDXMLElement.h in Headers */,
+				CE65EBA117698DFC005EB0E3 /* DDXMLElementAdditions.h in Headers */,
+				CE65EBA417698DFC005EB0E3 /* DDXMLNode.h in Headers */,
+				CE65EBA717698DFC005EB0E3 /* DDXMLPrivate.h in Headers */,
+				CE65EBAB17698DFC005EB0E3 /* NSArrayAdditions.h in Headers */,
+				CE65EBAE17698DFC005EB0E3 /* NSStringAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,9 +426,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "DownloadManager" */;
 			buildPhases = (
+				CB9E961FE8DD4C51A41BED34 /* Check Pods Manifest.lock */,
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
+				9FED364F77A64BE48F2E6842 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -513,6 +482,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9FED364F77A64BE48F2E6842 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		CB9E961FE8DD4C51A41BED34 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
 		CE8DD86011AA8ADC0073DA3A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,6 +534,12 @@
 				CEE8D54611AAA98C004AFC50 /* TDMatchResults.m in Sources */,
 				CEE8D5AF11AAB818004AFC50 /* MatchesTest.m in Sources */,
 				3BCBF17D11B13CB20098F6B7 /* LocalResourcesTest.m in Sources */,
+				CE65EB9D17698DFC005EB0E3 /* DDXMLDocument.m in Sources */,
+				CE65EBA017698DFC005EB0E3 /* DDXMLElement.m in Sources */,
+				CE65EBA317698DFC005EB0E3 /* DDXMLElementAdditions.m in Sources */,
+				CE65EBA617698DFC005EB0E3 /* DDXMLNode.m in Sources */,
+				CE65EBAD17698DFC005EB0E3 /* NSArrayAdditions.m in Sources */,
+				CE65EBB017698DFC005EB0E3 /* NSStringAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,11 +547,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE01A78E13B5ACAF00D47296 /* ioapi.c in Sources */,
-				CE01A78F13B5ACAF00D47296 /* mztools.c in Sources */,
-				CE01A79013B5ACAF00D47296 /* unzip.c in Sources */,
-				CE01A79113B5ACAF00D47296 /* zip.c in Sources */,
-				CE01A79213B5ACAF00D47296 /* ZipArchive.mm in Sources */,
 				CE8DD7C911AA72980073DA3A /* TDDownload.m in Sources */,
 				CEE8D54811AAA98C004AFC50 /* TDMatchResults.m in Sources */,
 				CEEAE07911ABD95B00E1C42D /* TDDownloadOperation.m in Sources */,
@@ -556,16 +554,16 @@
 				CE4E011E11B410D800D5140B /* TDConnectionOperation.m in Sources */,
 				CEC0D24511B47AA80040B20E /* TDRemoteIndexOperation.m in Sources */,
 				CE1DB84111C643D8000A7AE9 /* TDDeleteOperation.m in Sources */,
-				CE46D89A13311DA700F60C7B /* DDXMLDocument.m in Sources */,
-				CE46D89C13311DA700F60C7B /* DDXMLElement.m in Sources */,
-				CE46D89E13311DA700F60C7B /* DDXMLElementAdditions.m in Sources */,
-				CE46D8A013311DA700F60C7B /* DDXMLNode.m in Sources */,
-				CE4CDEF9133531DF006F07B9 /* NSArrayAdditions.m in Sources */,
-				CEDAB029135690D400BEC842 /* NSStringAdditions.m in Sources */,
 				CE8101D413572B9D00B5D9DB /* TDPurchaseDownload.m in Sources */,
 				CECD47FD13B389C100B81739 /* TDDownloadUnzipOperation.m in Sources */,
 				CE2B44B813C3436400AD4A5B /* InAppPurchaseManager.m in Sources */,
 				CE5D80B014D1554E00788A99 /* TDDownloadConfig.m in Sources */,
+				CE65EB9C17698DFC005EB0E3 /* DDXMLDocument.m in Sources */,
+				CE65EB9F17698DFC005EB0E3 /* DDXMLElement.m in Sources */,
+				CE65EBA217698DFC005EB0E3 /* DDXMLElementAdditions.m in Sources */,
+				CE65EBA517698DFC005EB0E3 /* DDXMLNode.m in Sources */,
+				CE65EBAC17698DFC005EB0E3 /* NSArrayAdditions.m in Sources */,
+				CE65EBAF17698DFC005EB0E3 /* NSStringAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +580,7 @@
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C577AA3D1A427389484A53 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -592,8 +591,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DownloadManager_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					SystemConfiguration,
+				);
 				PRODUCT_NAME = DownloadManager;
 				SKIP_INSTALL = YES;
 			};
@@ -601,6 +610,7 @@
 		};
 		1DEB922008733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C577AA3D1A427389484A53 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DSTROOT = /tmp/DownloadManager.dst;
@@ -608,8 +618,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DownloadManager_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					SystemConfiguration,
+				);
 				PRODUCT_NAME = DownloadManager;
 				SKIP_INSTALL = YES;
 			};
@@ -621,13 +641,9 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_THUMB_SUPPORT = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_CFLAGS = (
-					"-DPRINT_DEPRECATED=1",
-					"-DDEBUG=1",
-				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -643,13 +659,9 @@
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_CFLAGS = (
-					"-DDEBUG=0",
-					"-DPRINT_DEPRECATED=0",
-				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",

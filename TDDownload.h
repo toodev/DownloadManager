@@ -16,7 +16,6 @@
 #import "TDDownloadDelegate.h"
 #import "TDDownloadManagerDelegate.h"
 #import "TDConnectionOperation.h"
-#import "NSArrayAdditions.h"
 
 #define kPREF_URL @"URL"
 #define kPREF_RES @"resource"

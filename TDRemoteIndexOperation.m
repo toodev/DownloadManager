@@ -8,6 +8,7 @@
 
 #import "TDRemoteIndexOperation.h"
 #import "TDDownload.h"
+#import "NSArrayAdditions.h"
 
 @implementation TDRemoteIndexOperation
 

@@ -11,8 +11,8 @@
 #import "TDDownloadUnzipOperation.h"
 #import "TDDeleteOperation.h"
 #import "TDRemoteIndexOperation.h"
-#import "NSStringAdditions.h"
 #import "TDDownloadConfig.h"
+#import "NSArrayAdditions.h"
 
 @implementation TDDownload
 
