@@ -5,12 +5,13 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h> 
     #import "DDXML.h"
+    #import "MKStoreManager.h"
 #endif
 
-#define DEBUG FALSE
+#define DEBUG TRUE
 
 #if DEBUG
-#define TDLog(args...)    NSLog( @"%@", [NSString stringWithFormat: args])
+#define NSLog(args...)    NSLog( @"%@", [NSString stringWithFormat: args])
 #define LogMethod() NSLog(@"%s logged method call: -[%@ %s] (line %d)", _cmd, self, _cmd, __LINE__)
 #if PRINT_DEPRECATED
 #define WarnDeprecated() NSLog(@"***** WARNING: %s deprecated method call: -[%@ %s] (line %d)", _cmd, self, _cmd, __LINE__)
@@ -20,7 +21,7 @@
 #else  
 // DEBUG not defined:
 
-#define TDLog(args...)    // do nothing.
+#define NSLog(args...)    // do nothing.
 #define LogMethod() 
 #define WarnDeprecated() 
 #define NS_BLOCK_ASSERTIONS 1

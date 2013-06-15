@@ -181,7 +181,7 @@
 
 	[self didChangeValueForKey:@"isExecuting"];
 	
-	TDLog(@"----------------------> Start method called by the queue object for download: %@.",[remoteDocument title]);		
+	NSLog(@"----------------------> Start method called by the queue object for download: %@.",[remoteDocument title]);		
 }
 
 - (void)completeOperation {
@@ -196,14 +196,14 @@
 
 - (void) finalizeDownload {
 	
-	TDLog(@"%s Succeeded! Resource \"%@\" received %d bytes of data",__PRETTY_FUNCTION__,remoteDocument.title,[receivedData length]);
+	NSLog(@"%s Succeeded! Resource \"%@\" received %d bytes of data",__PRETTY_FUNCTION__,remoteDocument.title,[receivedData length]);
 		
 	// FROM THIS POINT THE OLD RESOURCE IS UPDATED
 	// store the path						
-    TDLog(@"%s writing data to file: %@",__PRETTY_FUNCTION__,localPath);
+    NSLog(@"%s writing data to file: %@",__PRETTY_FUNCTION__,localPath);
     NSError *error;
 	if(![receivedData writeToFile:localPath options:NSDataWritingAtomic error:&error]) {
-        TDLog(@"%s Error saving the resource",__PRETTY_FUNCTION__);
+        NSLog(@"%s Error saving the resource",__PRETTY_FUNCTION__);
 	}	
     
     // injection of final steps before calling delegate
@@ -259,21 +259,21 @@
 
 - (void)connection:(NSURLConnection *)aConnection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 	
-	TDLog(@"didReceiveAuthenticationChallenge");
+	NSLog(@"didReceiveAuthenticationChallenge");
 	
 	if ([challenge previousFailureCount] == 0 && [challenge proposedCredential] == nil) {
 		[[challenge sender] useCredential:[download credential] forAuthenticationChallenge:challenge];
 	} else if ([challenge proposedCredential] != nil) {
-		TDLog(@"received credential: %@",[challenge proposedCredential]);
+		NSLog(@"received credential: %@",[challenge proposedCredential]);
 	} else {
-		TDLog(@"cancelling the credential matching");
+		NSLog(@"cancelling the credential matching");
 		[[challenge sender] cancelAuthenticationChallenge:challenge];
 	}
 }
 
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     
-	TDLog(@"didCancelAuthenticationChallenge");
+	NSLog(@"didCancelAuthenticationChallenge");
 }
 
 - (void)connection:(NSURLConnection *)aConnection didReceiveData:(NSData *)data {
@@ -309,7 +309,7 @@
                 break;
         }
     } else {
-        TDLog(@"cannot determine content length - bytes received: %i",receivedData.length);
+        NSLog(@"cannot determine content length - bytes received: %i",receivedData.length);
     }
 }
 

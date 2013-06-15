@@ -27,9 +27,6 @@
 		CE9F7A411769D08400B4160E /* NSArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9F7A121769D08400B4160E /* NSArrayAdditions.m */; };
 		CE9F7A421769D08400B4160E /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9F7A131769D08400B4160E /* NSStringAdditions.h */; };
 		CE9F7A431769D08400B4160E /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9F7A141769D08400B4160E /* NSStringAdditions.m */; };
-		CE9F7A441769D08400B4160E /* InAppPurchaseDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9F7A161769D08400B4160E /* InAppPurchaseDataSource.h */; };
-		CE9F7A451769D08400B4160E /* InAppPurchaseManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9F7A171769D08400B4160E /* InAppPurchaseManager.h */; };
-		CE9F7A461769D08400B4160E /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9F7A181769D08400B4160E /* InAppPurchaseManager.m */; };
 		CE9F7A471769D08400B4160E /* TDConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9F7A191769D08400B4160E /* TDConnectionDelegate.h */; };
 		CE9F7A481769D08400B4160E /* TDConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9F7A1A1769D08400B4160E /* TDConnectionOperation.h */; };
 		CE9F7A491769D08400B4160E /* TDConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9F7A1B1769D08400B4160E /* TDConnectionOperation.m */; };
@@ -96,9 +93,6 @@
 		CE9F7A121769D08400B4160E /* NSArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditions.m; sourceTree = "<group>"; };
 		CE9F7A131769D08400B4160E /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
 		CE9F7A141769D08400B4160E /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
-		CE9F7A161769D08400B4160E /* InAppPurchaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseDataSource.h; sourceTree = "<group>"; };
-		CE9F7A171769D08400B4160E /* InAppPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseManager.h; sourceTree = "<group>"; };
-		CE9F7A181769D08400B4160E /* InAppPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseManager.m; sourceTree = "<group>"; };
 		CE9F7A191769D08400B4160E /* TDConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDConnectionDelegate.h; sourceTree = "<group>"; };
 		CE9F7A1A1769D08400B4160E /* TDConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDConnectionOperation.h; sourceTree = "<group>"; };
 		CE9F7A1B1769D08400B4160E /* TDConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDConnectionOperation.m; sourceTree = "<group>"; };
@@ -211,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				CE9F7A041769D08400B4160E /* KissXML */,
-				CE9F7A151769D08400B4160E /* Purchase */,
 				CE9F7A191769D08400B4160E /* TDConnectionDelegate.h */,
 				CE9F7A1A1769D08400B4160E /* TDConnectionOperation.h */,
 				CE9F7A1B1769D08400B4160E /* TDConnectionOperation.m */,
@@ -264,16 +257,6 @@
 			path = KissXML;
 			sourceTree = "<group>";
 		};
-		CE9F7A151769D08400B4160E /* Purchase */ = {
-			isa = PBXGroup;
-			children = (
-				CE9F7A161769D08400B4160E /* InAppPurchaseDataSource.h */,
-				CE9F7A171769D08400B4160E /* InAppPurchaseManager.h */,
-				CE9F7A181769D08400B4160E /* InAppPurchaseManager.m */,
-			);
-			path = Purchase;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -290,8 +273,6 @@
 				CE9F7A3D1769D08400B4160E /* DDXMLPrivate.h in Headers */,
 				CE9F7A401769D08400B4160E /* NSArrayAdditions.h in Headers */,
 				CE9F7A421769D08400B4160E /* NSStringAdditions.h in Headers */,
-				CE9F7A441769D08400B4160E /* InAppPurchaseDataSource.h in Headers */,
-				CE9F7A451769D08400B4160E /* InAppPurchaseManager.h in Headers */,
 				CE9F7A471769D08400B4160E /* TDConnectionDelegate.h in Headers */,
 				CE9F7A481769D08400B4160E /* TDConnectionOperation.h in Headers */,
 				CE9F7A4A1769D08400B4160E /* TDDeleteOperation.h in Headers */,
@@ -455,7 +436,6 @@
 				CE9F7A3C1769D08400B4160E /* DDXMLNode.m in Sources */,
 				CE9F7A411769D08400B4160E /* NSArrayAdditions.m in Sources */,
 				CE9F7A431769D08400B4160E /* NSStringAdditions.m in Sources */,
-				CE9F7A461769D08400B4160E /* InAppPurchaseManager.m in Sources */,
 				CE9F7A491769D08400B4160E /* TDConnectionOperation.m in Sources */,
 				CE9F7A4B1769D08400B4160E /* TDDeleteOperation.m in Sources */,
 				CE9F7A4D1769D08400B4160E /* TDDocument.m in Sources */,

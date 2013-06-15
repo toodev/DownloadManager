@@ -27,7 +27,7 @@
 - (void) main {
 		
 	if ([download remoteConnectionURL] == nil) {
-		TDLog(@"The connection URL is nil !!! Remote index will not be loaded.");
+		NSLog(@"The connection URL is nil !!! Remote index will not be loaded.");
 		return;
 	}	
     
@@ -46,13 +46,13 @@
         break;
             
         default:
-            TDLog(@"a valid update file type has not been found.");
+            NSLog(@"a valid update file type has not been found.");
             break;
     }
     
     // check if at this point the array is nil
     if (dictArray == nil) {
-        TDLog(@"The remote index is not loaded correctly.");		
+        NSLog(@"The remote index is not loaded correctly.");		
     }
 	
 	NSMutableArray *updatedDocumentIndex = [[NSMutableArray alloc] init];

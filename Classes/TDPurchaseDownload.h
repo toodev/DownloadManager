@@ -11,6 +11,9 @@
 #import "TDDownload.h"
 #import "TDPurchaseDownloadDelegate.h"
 
+#define kInAppPurchaseManagerTransactionSucceededNotification @"kInAppPurchaseManagerTransactionSucceededNotification"
+#define kInAppPurchaseManagerTransactionFailedNotification @"kInAppPurchaseManagerTransactionFailedNotification"
+
 @interface TDPurchaseDownload : TDDownload <UIAlertViewDelegate> {
     
     TDDocument *selectedDocument;
@@ -24,9 +27,5 @@
 
 - (void) beginDownloadOfPreview:(TDDocument*)remoteDocument;
 - (void) beginPurchaseOfDocument:(TDDocument*)remoteDocument;
-
-- (void) productPurchased:(NSNotification*)notification;
-- (void) productTransferred:(NSNotification*)notification;
-- (void) productPurchaseFailed:(NSNotification*)notification;
 
 @end

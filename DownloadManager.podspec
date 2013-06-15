@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/**/*.{h,m}'
   s.dependency 'ASIHTTPRequest'
   s.dependency 'ZipArchive'
+  s.dependency 'MKStoreKit'
   s.requires_arc = false
 
 end

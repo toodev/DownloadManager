@@ -10,15 +10,18 @@ PODS:
     - Reachability
   - ASIHTTPRequest/S3 (1.8.1):
     - Reachability
+  - MKStoreKit (4.99)
   - Reachability (3.1.0)
   - ZipArchive (1.1.1)
 
 DEPENDENCIES:
   - ASIHTTPRequest
+  - MKStoreKit
   - ZipArchive
 
 SPEC CHECKSUMS:
   ASIHTTPRequest: a411b8d0f006ed8fc24248be6a0c4ad2abc9b101
+  MKStoreKit: e93873e40a030328487a527b08b5e12287efc1df
   Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
   ZipArchive: fe150a1f9db42002da567722f9c8f2cafd589396
 

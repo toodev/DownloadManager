@@ -34,14 +34,14 @@
     
 	// ILLEGAL ARGUMENT
 	if (server == nil) {
-		TDLog(@"[TDConnectionOperation] connectionTest: the server string is nil. cannot connect.");
+		NSLog(@"[TDConnectionOperation] connectionTest: the server string is nil. cannot connect.");
 		return NO;
 	}
 	
 	// test "server" string can be a NSURL
 	NSURL *testURL = [[NSURL alloc] initWithString:server];	
 	if (testURL == nil) {
-		TDLog(@"[TDConnectionOperation] connectionTest: the server URL is nil. cannot connect.");
+		NSLog(@"[TDConnectionOperation] connectionTest: the server URL is nil. cannot connect.");
         [testURL release];
 		return NO;
 	}
@@ -49,7 +49,7 @@
 	// test URL connection
 	NSURLRequest *testRequest = [[NSURLRequest alloc] initWithURL:testURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:self.defaultRequestTimeout];
 	if (![NSURLConnection canHandleRequest:testRequest]) {
-		TDLog(@"[TDConnectionOperation] connectionTest: the wrapper CANNOT handle a request to the server. cannot connect.");
+		NSLog(@"[TDConnectionOperation] connectionTest: the wrapper CANNOT handle a request to the server. cannot connect.");
         
         // release the tests
         [testRequest release];
@@ -61,7 +61,7 @@
 	[testRequest release];
 	[testURL release];
 	
-	TDLog(@"[TDConnectionOperation] connectionTest: OK");
+	NSLog(@"[TDConnectionOperation] connectionTest: OK");
 	return YES;
 }
 
@@ -72,7 +72,7 @@
 	if (delegate) [delegate didStartConnecting];
 	
 	if ([download remoteConnectionPath] && [download remoteConnectionURL]) {
-		TDLog(@"ConnectionOperation will quit since the connection has already been established."); 
+		NSLog(@"ConnectionOperation will quit since the connection has already been established."); 
 		if (delegate) [delegate didFinishConnecting];			
 		[pool release];
 		return;
@@ -80,7 +80,7 @@
 	
 	if ([download preferences] == nil) {
 		[download setConnectionStatus:kCONN_UNAVAILABLE]; 
-		TDLog(@"Preferences not found. Connection operation is skipping..."); 
+		NSLog(@"Preferences not found. Connection operation is skipping..."); 
 		if (delegate) [delegate connectionNotAvailable];
 		[pool release];
 		return;
@@ -100,11 +100,11 @@
 				NSString *paths = [NSString pathWithComponents:[NSArray arrayWithObjects:theURL,theResource,nil]];
 				NSString *paths2 = [paths stringByReplacingOccurrencesOfString:@"http:/" withString:@""];				   
 				connString = [NSString stringWithFormat:@"http://%@:%@@%@",username,password,paths2];
-				TDLog(@"connString: %@",connString);
+				NSLog(@"connString: %@",connString);
 			} else {
 				// NO USERNAME AND-OR PASSWORD FOUND: ASSUMING NT NEEDED
 				connString = [NSString pathWithComponents:[NSArray arrayWithObjects:theURL,theResource,nil]];
-				TDLog(@"creating the connection without credentials: %@",connString);
+				NSLog(@"creating the connection without credentials: %@",connString);
 			}
             
             // Connection test
@@ -115,7 +115,7 @@
 					[download setCredential:[NSURLCredential credentialWithUser:username password:password persistence:NSURLCredentialPersistenceNone]];
 				}
 				
-				TDLog(@"found VALID connection URL.");
+				NSLog(@"found VALID connection URL.");
 				download.connectionStatus = kCONN_AVAILABLE;
 				
 				if (delegate) [delegate didFinishConnecting];	
@@ -126,7 +126,7 @@
 				return;
 				
 			} else {
-				TDLog(@"INVALID connection URL: %@ \n\tNext...",[theURL description]);
+				NSLog(@"INVALID connection URL: %@ \n\tNext...",[theURL description]);
 			}
 		}	
 		resIdx = 0;
@@ -134,7 +134,7 @@
 	
 	if ([download remoteConnectionURL] == nil) {
 		[download setConnectionStatus:kCONN_UNAVAILABLE]; 
-		TDLog(@"RemoteConnectionPath not available."); 
+		NSLog(@"RemoteConnectionPath not available."); 
 		if (delegate) [delegate connectionNotAvailable];
 		[pool release];
 		return;

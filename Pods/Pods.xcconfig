@@ -1,8 +1,8 @@
 ALWAYS_SEARCH_USER_PATHS = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS} $(SDKROOT)/usr/include/libxml2
-OTHER_LDFLAGS = -ObjC -lxml2.2 -lz -lz.1 -framework CFNetwork -framework CoreGraphics -framework MobileCoreServices -framework SystemConfiguration
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/ASIHTTPRequest" "${PODS_ROOT}/BuildHeaders/Reachability" "${PODS_ROOT}/BuildHeaders/ZipArchive"
+OTHER_LDFLAGS = -ObjC -lxml2.2 -lz -lz.1 -framework CFNetwork -framework CoreGraphics -framework MobileCoreServices -framework Security -framework StoreKit -framework SystemConfiguration
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/ASIHTTPRequest" "${PODS_ROOT}/BuildHeaders/MKStoreKit" "${PODS_ROOT}/BuildHeaders/Reachability" "${PODS_ROOT}/BuildHeaders/ZipArchive"
 PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/ASIHTTPRequest" "${PODS_ROOT}/Headers/Reachability" "${PODS_ROOT}/Headers/ZipArchive"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/ASIHTTPRequest" "${PODS_ROOT}/Headers/MKStoreKit" "${PODS_ROOT}/Headers/Reachability" "${PODS_ROOT}/Headers/ZipArchive"
 PODS_ROOT = ${SRCROOT}/Pods

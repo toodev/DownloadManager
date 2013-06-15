@@ -8,7 +8,6 @@
 
 #import "TDPurchaseDownload.h"
 #import "TDDownloadOperation.h"
-#import "InAppPurchaseManager.h"
 
 #define BUTTON_NO 0
 #define BUTTON_YES 1
@@ -22,18 +21,12 @@
 static TDPurchaseDownload *INSTANCE = nil;
 
 - (id) init {
-    if ((self = [super init])) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kInAppPurchaseManagerTransactionSucceededNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productTransferred:) name:kInAppPurchaseManagerProductsFetchedNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchaseFailed:) name:kInAppPurchaseManagerTransactionFailedNotification object:nil];
+    if ((self = [super init])) {        
     }
     return self;
 }
 
-- (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kInAppPurchaseManagerTransactionSucceededNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kInAppPurchaseManagerProductsFetchedNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kInAppPurchaseManagerTransactionFailedNotification object:nil];
+- (void) dealloc {    
     [super dealloc];
 }
 
@@ -111,9 +104,32 @@ static TDPurchaseDownload *INSTANCE = nil;
                         return;
                     }
                     
-                    [[InAppPurchaseManager sharedInAppPurchaseManager] loadStore];
-                    [[InAppPurchaseManager sharedInAppPurchaseManager] requestProductWithId:selectedDocument.productId];
-
+                    [[MKStoreManager sharedManager] buyFeature:selectedDocument.productId onComplete:^(NSString *purchasedFeature, NSData *purchasedReceipt, NSArray *availableDownloads) {
+                        
+                        // call purchaseDelegate
+                        if (purchaseDelegate)
+                            [(NSObject*)purchaseDelegate performSelectorOnMainThread:@selector(documentPurchased:) withObject:selectedDocument waitUntilDone:YES];
+                        
+                        // notification center
+                        [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseManagerTransactionSucceededNotification object:selectedDocument];
+                        
+                        NSString *mex = [NSString stringWithFormat:NSLocalizedString(@"Do you want to download %@ now ?",@"Download title"),selectedDocument.title];
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Download",@"Download") message:mex delegate:self cancelButtonTitle:NSLocalizedString(@"No",@"No") otherButtonTitles:NSLocalizedString(@"Yes",@"Yes"),nil];
+                        alertView.tag = kAlertViewDownload;
+                        [alertView show];
+                        [alertView release];
+                        
+                    } onCancelled:^{
+                        
+                        // notification center
+                        [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseManagerTransactionFailedNotification object:selectedDocument];
+                        
+                        // tell the user this device cannot purchase
+                        NSString *mex = NSLocalizedString(@"Your Device cannot purchase",@"Cannot Purchase");
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Purchase",@"Cannot Purchase title") message:mex delegate:self cancelButtonTitle:NSLocalizedString(@"Help",@"Help") otherButtonTitles:NSLocalizedString(@"Cancel",@"Cancel"),nil];
+                        [alertView show];
+                        [alertView release];
+                    }];
                     
                     break;
                 case BUTTON_NO:
@@ -146,52 +162,6 @@ static TDPurchaseDownload *INSTANCE = nil;
         default:
             break;
     }
-}
-
-#pragma mark - In App Purchase Events
-
-- (void) productTransferred:(NSNotification*)notification {
-    
-    // get the product from notification
-    SKProduct *product = (SKProduct*)notification.object;
-    
-    if (product == nil) {
-        NSLog(@"%s FATAL ERROR product is nil. Fix this. Skipping...",__PRETTY_FUNCTION__);
-        return;
-    }
-    
-    if ([[InAppPurchaseManager sharedInAppPurchaseManager] canMakePurchases]) {
-        
-        [[InAppPurchaseManager sharedInAppPurchaseManager] purchaseProductWithId:product.productIdentifier];
-        
-    } else {
-        // tell the user this device cannot purchase
-        NSString *mex = NSLocalizedString(@"Your Device cannot purchase",@"Cannot Purchase");
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Purchase",@"Cannot Purchase title") message:mex delegate:self cancelButtonTitle:NSLocalizedString(@"Help",@"Help") otherButtonTitles:NSLocalizedString(@"Cancel",@"Cancel"),nil];
-        [alertView show];
-        [alertView release];
-    }
-}
-
-// dopo che il prodotto è stato trasferito, se viene chiamato questo metodo vuol dire che è stato comprato
-- (void) productPurchased:(NSNotification*)notification {
-    
-    // call purchaseDelegate
-    if (purchaseDelegate)
-        [(NSObject*)purchaseDelegate performSelectorOnMainThread:@selector(documentPurchased:) withObject:selectedDocument waitUntilDone:YES];
-    
-    
-    
-    NSString *mex = [NSString stringWithFormat:NSLocalizedString(@"Do you want to download %@ now ?",@"Download title"),selectedDocument.title];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Download",@"Download") message:mex delegate:self cancelButtonTitle:NSLocalizedString(@"No",@"No") otherButtonTitles:NSLocalizedString(@"Yes",@"Yes"),nil];
-    alertView.tag = kAlertViewDownload;
-    [alertView show];
-    [alertView release];
-}
-
-// dopo che il prodotto è stato trasferito, se viene chiamato questo metodo vuol dire che non è stato comprato
-- (void) productPurchaseFailed:(NSNotification*)notification {
-    
 }
 
 @end

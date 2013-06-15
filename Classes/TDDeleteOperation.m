@@ -35,7 +35,7 @@
 	
 	// INITIAL CHECK-UP OF RESOURCES
 	if (document == nil) {
-		TDLog(@"----> WARNING: an attempt of DELETING a nil resource has been done. skipping...");
+		NSLog(@"----> WARNING: an attempt of DELETING a nil resource has been done. skipping...");
 		if (delegate) [delegate didFinishFileDownload:document withCommand:TDMatchResultCaseError];
 		[pool release];
 		return;
@@ -50,10 +50,10 @@
 		// REMOVE RESOURCE OPERATION
 		if ([document filename] != nil) {
 			path = [localResourceFolder stringByAppendingPathComponent:[document filename]];
-			TDLog(@"Removing the file: %@",path);
+			NSLog(@"Removing the file: %@",path);
 			// remove the file
 			if (![[download fileManager] removeItemAtPath:path error:error]) {
-				TDLog(@"Cannot remote the file for the document: %@",[document description]);
+				NSLog(@"Cannot remote the file for the document: %@",[document description]);
 			}
 		}
 		// END
@@ -61,9 +61,9 @@
 		// REMOVE ICON RESOURCE OPERATION
 		if ([document iconname] != nil) {
 			path = [localResourceFolder stringByAppendingPathComponent:[document iconname]];
-			TDLog(@"Removing the icon file: %@",path);
+			NSLog(@"Removing the icon file: %@",path);
 			if (![[download fileManager] removeItemAtPath:path error:error]) {
-				TDLog(@"Cannot remote the icon file for the document: %@",[document description]);
+				NSLog(@"Cannot remote the icon file for the document: %@",[document description]);
 			}	
 		}
 		// END
@@ -73,7 +73,7 @@
 		if (NSNotFound != index) {
 			[[download documentIndex] removeObjectAtIndex:index];
 		} else {
-			TDLog(@"----> WARNING: descriptor for file: %@ has not been found while DELETING. skipping...",[document filename]);
+			NSLog(@"----> WARNING: descriptor for file: %@ has not been found while DELETING. skipping...",[document filename]);
 		}
 		//END
 		

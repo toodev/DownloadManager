@@ -17,13 +17,13 @@
 
     // check localPath exists
     if (!localPath) {
-        TDLog(@"[TDDownloadUnzipOperation] ILLEGAL ARGUMENT: localPath is nil. Skipping...");
+        NSLog(@"[TDDownloadUnzipOperation] ILLEGAL ARGUMENT: localPath is nil. Skipping...");
         return;
     }
     
     // check if localPath is a zip file
     if (![[localPath pathExtension] isEqualToString:@"zip"]) {
-        TDLog(@"[TDDownloadUnzipOperation] cannot continue unzipping: %@ is not an archive.",localPath);
+        NSLog(@"[TDDownloadUnzipOperation] cannot continue unzipping: %@ is not an archive.",localPath);
         return;
     }
     
@@ -33,7 +33,7 @@
     // check if localDir is directory
     BOOL isDir = NO;
     if (![[NSFileManager defaultManager] fileExistsAtPath:localDir isDirectory:&isDir] && isDir) {
-        TDLog(@"[TDDownloadUnzipOperation] cannot continue unzipping: cannot create local directory for storing files in archive.");
+        NSLog(@"[TDDownloadUnzipOperation] cannot continue unzipping: cannot create local directory for storing files in archive.");
         return;
     }
     

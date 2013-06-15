@@ -80,7 +80,7 @@
  INSTANCE = [[TDDownload alloc] initWithPreferences:preferences];
  [preferences release];
  } else {
- TDLog(@"[TDDownload] sharedInstance ERROR: Preferences.plist file not found. return nil...");
+ NSLog(@"[TDDownload] sharedInstance ERROR: Preferences.plist file not found. return nil...");
  return nil;
  }
  }
@@ -147,7 +147,7 @@
 	
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"Preferences.plist" ofType:nil];
     if (path == nil) {
-        TDLog(@"[TDDownload] SEVERE ERROR: Preferences.plist is missing from Bundle. Please create a new Preferences file before continue.");
+        NSLog(@"[TDDownload] SEVERE ERROR: Preferences.plist is missing from Bundle. Please create a new Preferences file before continue.");
     }
 	_preferences = [[NSDictionary alloc] initWithContentsOfFile:path];
 	return _preferences;
@@ -183,7 +183,7 @@
 - (NSMutableArray*) loadMyIndex {
 	
 	if (documentIndex == nil) {
-		TDLog(@"DocumentIndex is nil !!!");
+		NSLog(@"DocumentIndex is nil !!!");
 		self.documentIndex = [[NSMutableArray alloc] init];
 	}
 	
@@ -216,7 +216,7 @@
     }
 	
 	if (myArray == nil) {
-		TDLog(@"There is no serialization of the local document index to load. Skipping...");
+		NSLog(@"There is no serialization of the local document index to load. Skipping...");
 		return documentIndex;
 	}
 	
@@ -245,17 +245,17 @@
     switch (localUpdateFileType) {
         case Plist: {
             if(![myArray writeToFile:descriptionPath atomically:YES]) {
-                TDLog(@"Cannot write the local index at the description path: %@",descriptionPath);
+                NSLog(@"Cannot write the local index at the description path: %@",descriptionPath);
             } else {
-                TDLog(@"Local index serialized.");
+                NSLog(@"Local index serialized.");
             }
         }
             break;
         case XML: {
             if(![NSArrayAdditions writeArray:myArray ToXMLFile:descriptionPath atomically:YES]) {
-                TDLog(@"Cannot write the local index to the XML description path: %@",descriptionPath);
+                NSLog(@"Cannot write the local index to the XML description path: %@",descriptionPath);
             } else {
-                TDLog(@"Local index serialized.");
+                NSLog(@"Local index serialized.");
             }
         }
         case Binary: {
@@ -268,7 +268,7 @@
             if (![data writeToFile:descriptionPath options:NSDataWritingFileProtectionComplete error:&error]) {
                 NSLog(@"Fatal error while writing my index to path: %@ : %@",descriptionPath,[error userInfo]);
             } else {
-                TDLog(@"Local index serialized");
+                NSLog(@"Local index serialized");
             }
         }
         default:
@@ -288,16 +288,16 @@
     // ILLEGAL ARGUMENT CHECKS
     
 	if(updatedIndex == nil) {
-		TDLog(@"The dictionary with the updated resources must not be nil");
+		NSLog(@"The dictionary with the updated resources must not be nil");
         return;
 	}
     
     if([updatedIndex count] == 0) {
-		TDLog(@"The dictionary with the updated resources must not be empty");
+		NSLog(@"The dictionary with the updated resources must not be empty");
         return;
 	}
     
-	TDLog(@"Write the new description at path: %@",descriptionPath);
+	NSLog(@"Write the new description at path: %@",descriptionPath);
 	[documentIndex removeAllObjects];
     [documentIndex addObjectsFromArray:updatedIndex];
  	
@@ -319,18 +319,18 @@
 	
 	NSNumber *dict1ID = [dict1 documentId];
 	if (dict1ID == nil) {
-		TDLog(@"The document ID cannot be found in %@",dict1);
+		NSLog(@"The document ID cannot be found in %@",dict1);
 		return NO;
 	}
 	NSNumber *dict2ID = [dict2 documentId];
 	if (dict2ID == nil) {
-		TDLog(@"The document ID cannot be found in %@",dict2);
+		NSLog(@"The document ID cannot be found in %@",dict2);
 		return NO;
 	}
 	
 	if ([dict1ID isEqualToNumber:dict2ID]) {
-		TDLog(@"dict1 ID: %@ <---> dict2 ID: %@",dict1ID,dict2ID);
-		TDLog(@"Found local description that matches resources %@",[dict2 description]);
+		NSLog(@"dict1 ID: %@ <---> dict2 ID: %@",dict1ID,dict2ID);
+		NSLog(@"Found local description that matches resources %@",[dict2 description]);
 		return YES;
 	}
 	return NO;
@@ -383,15 +383,15 @@
 	firstVer  = [first versionNumber];
 	secondVer = [second versionNumber];
 	
-	TDLog(@"first  version number: %@",[firstVer description]);
-	TDLog(@"second version number: %@",[secondVer description]);
+	NSLog(@"first  version number: %@",[firstVer description]);
+	NSLog(@"second version number: %@",[secondVer description]);
 	
 	if (firstVer == nil) {
-		TDLog(@"The version of the FIRST dictionary is not present !!!");
+		NSLog(@"The version of the FIRST dictionary is not present !!!");
 		return NO;
 	}
 	if (secondVer == nil) {
-		TDLog(@"The version of the SECOND dictionary is not present !!!");
+		NSLog(@"The version of the SECOND dictionary is not present !!!");
 		return NO;
 	}
 	
@@ -403,7 +403,7 @@
 - (TDMatchResultCase) processForUpdate:(TDDocument*)remoteDocument inLocalIndex:(NSArray*)anIndex {
     
 	if (remoteDocument == nil) {
-		TDLog(@"Aborting update: the remoteDocument cannot be nil !!!");
+		NSLog(@"Aborting update: the remoteDocument cannot be nil !!!");
 		return TDMatchResultCaseError;
 	}
 	
@@ -412,8 +412,8 @@
     NSString *localResourceFolder = [TDDownloadConfig localResourceFolder];
 	NSString *path = [localResourceFolder stringByAppendingPathComponent:[remoteDocument filename]];
 	BOOL fileIsPresent = [fileManager fileExistsAtPath:path];
-	if (fileIsPresent) TDLog(@"Local resource found at path: %@",path);
-	else TDLog(@"Local resource for remote document %@ has NOT been found.",[remoteDocument filename]);
+	if (fileIsPresent) NSLog(@"Local resource found at path: %@",path);
+	else NSLog(@"Local resource for remote document %@ has NOT been found.",[remoteDocument filename]);
     
 	if ((match = [self isLocallyPresent:remoteDocument inArray:anIndex])) {
 		if ([self isOlder:match Then:remoteDocument]) {
@@ -442,10 +442,10 @@
 	// if the local is not found, mark for DELETE, mark OK otherwise.
 	
 	if (NSNotFound == [anIndex indexOfObject:localDocument]) {
-		TDLog(@"processForDelete: \"%@\" NOT FOUND IN REMOTE INDEX --> DELETE",[localDocument description]);
+		NSLog(@"processForDelete: \"%@\" NOT FOUND IN REMOTE INDEX --> DELETE",[localDocument description]);
 		return TDMatchResultCaseDelete;
 	}
-	TDLog(@"processForDelete: \"%@\" FOUND IN REMOTE INDEX --> KEEP",[localDocument description]);
+	NSLog(@"processForDelete: \"%@\" FOUND IN REMOTE INDEX --> KEEP",[localDocument description]);
 	return TDMatchResultCaseOk;
 }
 
@@ -454,7 +454,7 @@
 	TDMatchResults *results = [TDMatchResults emptyResults];
 	
     //	if ([[queue operations] count] > 0) {
-    //		TDLog(@"Requesting Sync while operations are being executed. compareLocalWithLastUpdate will be skipped...");
+    //		NSLog(@"Requesting Sync while operations are being executed. compareLocalWithLastUpdate will be skipped...");
     //		return results;
     //	}
 	
@@ -462,12 +462,12 @@
 	[self preConnectionStuff];
 	
 	if (connectionStatus == kCONN_UNAVAILABLE) {
-		TDLog(@"Connection unavailable, abort operation.");
+		NSLog(@"Connection unavailable, abort operation.");
 		return results;
 	}
 	
 	if (updatedDocumentIndex == nil) {
-		TDLog(@"updatedDocumentIndex is nil !!!");
+		NSLog(@"updatedDocumentIndex is nil !!!");
 		return results;
 	}
 	
@@ -510,8 +510,8 @@
 - (BOOL) performCompleteUpdate:(TDMatchResults*)updates WithSort:(TDSort)aSort {
 	
     //	if ([[queue operations] count] > 0) {
-    //		TDLog(@"Requesting Complete Update while operations are being executed. performCompleteUpdate will be skipped...");
-    //		TDLog(@"operations: %@",[[queue operations] description]);
+    //		NSLog(@"Requesting Complete Update while operations are being executed. performCompleteUpdate will be skipped...");
+    //		NSLog(@"operations: %@",[[queue operations] description]);
     //		return NO;
     //	}
 	
@@ -527,7 +527,7 @@
 	
 	for (TDDocument *aDoc in [updates results]) {
 		
-		TDLog(@"Complete update of : %@",[aDoc description]);
+		NSLog(@"Complete update of : %@",[aDoc description]);
 		[self performUpdate:aDoc];
 	}
 	
@@ -546,13 +546,13 @@
 	
 	// check if updatedDocument exists
 	if (updatedDocument == nil) {
-        TDLog(@"Aborting performUpdate: because updatedDocument is nil !!!");
+        NSLog(@"Aborting performUpdate: because updatedDocument is nil !!!");
         return NO;
 	}
 	
 	// check if the title exists
 	if ([updatedDocument title] == nil) {
-        TDLog(@"Aborting performUpdate: because updatedDocument TITLE is nil !!!");
+        NSLog(@"Aborting performUpdate: because updatedDocument TITLE is nil !!!");
         return NO;
 	}
     
@@ -561,13 +561,13 @@
     
     //TESTS FOR ABORTING UPDATE (because is not needed)
     if (documentDownloaded && TDMatchResultCaseOk == matchCase) {
-		TDLog(@"Aborting UPDATE because is not needed. File already present and last version of index.");
+		NSLog(@"Aborting UPDATE because is not needed. File already present and last version of index.");
 		return NO;
 	}
     
     // CHECK IF THE CONNECTION HAS BEEN DONE
     if (remoteConnectionPath == nil) {
-        TDLog(@"[TDDownload] beginning connection before download");
+        NSLog(@"[TDDownload] beginning connection before download");
         [self chooseUpdateURL];
         [queue waitUntilAllOperationsAreFinished];
     }
@@ -575,7 +575,7 @@
 	// CONTINUE THE UPDATE
     
 	if (TDMatchResultCaseNew == matchCase || TDMatchResultCaseUpdate == matchCase || documentDownloaded == NO) {
-		TDLog(@"Preparing NEW or UPDATE operation");
+		NSLog(@"Preparing NEW or UPDATE operation");
         
         // DOWNLOAD THE PDF
         //  [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
@@ -633,14 +633,14 @@
         
 	} else {
 		// prepare the delete operation
-		TDLog(@"Preparing DELETE operation");
+		NSLog(@"Preparing DELETE operation");
 		TDDeleteOperation *op = [[TDDeleteOperation alloc] initWithDownload:self];
 		[op setDocument:updatedDocument];
         [queue addOperation:op];
         [op release];
 	}
     
-	TDLog(@"ADDED an operation in queue.");
+	NSLog(@"ADDED an operation in queue.");
 	// finally process the operation in the queue
 	
 	
@@ -654,14 +654,14 @@
     if (status) {
         return [status intValue] == DownloadStatusDownloading;
     } else {
-        TDLog(@"[TDDownload] isDownloadingDocument PRESETTING \"available\" mode for document: %@",[document description]);
+        NSLog(@"[TDDownload] isDownloadingDocument PRESETTING \"available\" mode for document: %@",[document description]);
         [self setDownloadStatus:DownloadStatusAvailable toDocument:document];
         return NO;
     }
 }
 
 - (void) setDownloadStatus:(DownloadStatus)downloadStatus toDocument:(TDDocument*)document {
-    TDLog(@"[TDDownload] setDownloadStatus: %i toDocument: %@",downloadStatus,[document description]);
+    NSLog(@"[TDDownload] setDownloadStatus: %i toDocument: %@",downloadStatus,[document description]);
     [downloadTable setObject:[NSNumber numberWithInt:downloadStatus] forKey:document.documentId];
 }
 
@@ -672,25 +672,25 @@
     // remove the document
     if (anIndex.filename) {
         if (![fileManager removeItemAtPath:[pdfFolder stringByAppendingPathComponent:anIndex.filename] error:NULL]) {
-            TDLog(@"Cannot remove the file for the document: %@",[anIndex description]);
+            NSLog(@"Cannot remove the file for the document: %@",[anIndex description]);
         }
     }
 	// remove the icon
 	if (anIndex.iconname) {
 		if (![fileManager removeItemAtPath:[iconFolder stringByAppendingPathComponent:anIndex.iconname] error:NULL]) {
-			TDLog(@"Cannot remove the icon for the document: %@",[anIndex description]);
+			NSLog(@"Cannot remove the icon for the document: %@",[anIndex description]);
 		}
 	}
     // remove any asset
     if (anIndex.assetsname) {
 		if (![fileManager removeItemAtPath:[assetFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@", anIndex.title, anIndex.assetsname]] error:NULL]) {
-			TDLog(@"Cannot remove the asset for the document: %@",[anIndex description]);
+			NSLog(@"Cannot remove the asset for the document: %@",[anIndex description]);
 		}
 	}
     // remove preview
     if (anIndex.preview) {
         if (![fileManager removeItemAtPath:[previewFolder stringByAppendingPathComponent:anIndex.preview] error:NULL]) {
-			TDLog(@"Cannot remote the preview for the document: %@",[anIndex description]);
+			NSLog(@"Cannot remote the preview for the document: %@",[anIndex description]);
 		}
     }
     
@@ -710,25 +710,25 @@
 	// remove the document
     if (anIndex.filename) {
         if (![fileManager removeItemAtPath:[pdfFolder stringByAppendingPathComponent:anIndex.filename] error:NULL]) {
-            TDLog(@"Cannot remote the file for the document: %@",[anIndex description]);
+            NSLog(@"Cannot remote the file for the document: %@",[anIndex description]);
         }
     }
 	// remove the icon
 	if (anIndex.iconname) {
 		if (![fileManager removeItemAtPath:[iconFolder stringByAppendingPathComponent:anIndex.iconname] error:NULL]) {
-			TDLog(@"Cannot remote the icon for the document: %@",[anIndex description]);
+			NSLog(@"Cannot remote the icon for the document: %@",[anIndex description]);
 		}
 	}
     // remove any asset
     if (anIndex.assetsname) {
 		if (![fileManager removeItemAtPath:[assetFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@", anIndex.title, anIndex.assetsname]] error:NULL]) {
-			TDLog(@"Cannot remote the asset for the document: %@",[anIndex description]);
+			NSLog(@"Cannot remote the asset for the document: %@",[anIndex description]);
 		}
 	}
     // remove preview
     if (anIndex.preview) {
         if (![fileManager removeItemAtPath:[previewFolder stringByAppendingPathComponent:anIndex.preview] error:NULL]) {
-			TDLog(@"Cannot remote the preview for the document: %@",[anIndex description]);
+			NSLog(@"Cannot remote the preview for the document: %@",[anIndex description]);
 		}
     }
     
@@ -826,13 +826,12 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 	// ad oggi esiste il sort
 	// TDSortNone    che indica di non fare il sort
 	// TDSortByTitle e TDSortByDocId
-	TDLog(@"Requested to SORT the local index with sort type: %i",currentSort);
+	NSLog(@"Requested to SORT the local index with sort type: %i",currentSort);
 	if (currentSort == TDSortNone) {
-		TDLog(@"There is no sort rule. skipping...");
+		NSLog(@"There is no sort rule. skipping...");
 		return;
 	}
 	
-	NSArray *sortedArray = nil;
 	int ascending = NO;
 	
 	switch(currentSort) {
@@ -874,32 +873,32 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
             break;
 	}
     
-	TDLog(@"The sorted documentIndex description: %@",[documentIndex description]);
+	NSLog(@"The sorted documentIndex description: %@",[documentIndex description]);
 	
     //    documentIndex = [sortedArray mutableCopy];
 	
-	TDLog(@"SORT completed succesfully.");
+	NSLog(@"SORT completed succesfully.");
 }
 
 #pragma mark -
 #pragma mark TDConnectionDelegate standard implementation
 
 - (void) didStartConnecting {
-	TDLog(@"------------>ConnectionOperation: start connecting<------------");
+	NSLog(@"------------>ConnectionOperation: start connecting<------------");
 	
 	// bounce to external delegate
 	if (connectionDelegate) [connectionDelegate didStartConnecting];
 }
 
 - (void) didFinishConnecting {
-	TDLog(@"------------>ConnectionOperation: finished connecting<------------");
+	NSLog(@"------------>ConnectionOperation: finished connecting<------------");
     
 	// bounce to external delegate
 	if (connectionDelegate) [connectionDelegate didFinishConnecting];
 }
 
 - (void) connectionNotAvailable {
-	TDLog(@"------------>ConnectionOperation: connection not available<------------");
+	NSLog(@"------------>ConnectionOperation: connection not available<------------");
 	
 	// bounce to external delegate
 	if (connectionDelegate) [connectionDelegate connectionNotAvailable];
@@ -910,21 +909,21 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 
 - (void) remoteIndexDownloaded:(NSMutableArray*)remoteIndex {
     
-	TDLog(@"remote index downloaded");
+	NSLog(@"remote index downloaded");
 	[updatedDocumentIndex removeAllObjects];
 	[updatedDocumentIndex addObjectsFromArray:remoteIndex];
-	TDLog(@"The new remote index description: \n %@",[updatedDocumentIndex description]);
+	NSLog(@"The new remote index description: \n %@",[updatedDocumentIndex description]);
     
     // if in app purchase download the icons
     if (downloadMode == InAppPurchaseMode) {
         
-        TDLog(@"[TDDownload] download mode is IN APP PURCHASE: starting download of icons.......");
+        NSLog(@"[TDDownload] download mode is IN APP PURCHASE: starting download of icons.......");
         
         for (TDDocument *document in remoteIndex) {
             
             if (document.iconname && [document isIconDownloaded] == NO) {
                 
-                TDLog(@"[RemoteIndexDownloaded] download ICON needed for document %@",document);
+                NSLog(@"[RemoteIndexDownloaded] download ICON needed for document %@",document);
                 
                 // prepare remotePath and localPath
                 NSString *rp = [remoteConnectionPath stringByAppendingPathComponent:kIconFolderName];
@@ -955,10 +954,10 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 - (void) updatesAvailable:(TDMatchResults *)updates {
     
     if (downloadMode == CompleteSyncMode) {
-        TDLog(@"[DownloadManager] downloadMode is CompleteSync: start automatic download.");
+        NSLog(@"[DownloadManager] downloadMode is CompleteSync: start automatic download.");
         [self performCompleteUpdate:updates];
     } else if (downloadMode == InAppPurchaseMode) {
-        //        TDLog(@"[DownloadManager] downloadMode is InAppPurchase: start automatic download of icons and previews");
+        //        NSLog(@"[DownloadManager] downloadMode is InAppPurchase: start automatic download of icons and previews");
         //        downloadType = downloadIconAndPreview;
         //        [self performCompleteUpdate:updates];
     }
@@ -971,7 +970,7 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 #pragma mark TDDownloadDelegate standard implementation
 
 - (void) didStartDownload:(TDDocument*)document {
-	TDLog(@"Download started");
+	NSLog(@"Download started");
     
 	// bounce to external delegate
     SEL selector = @selector(didStartDownload:);
@@ -980,7 +979,7 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 }
 
 - (void) didFinishDownload:(TDDocument *)document {
-    TDLog(@"Download finished");
+    NSLog(@"Download finished");
     
 	// bounce to external delegate
     SEL selector = @selector(didFinishDownload:);
@@ -992,7 +991,7 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 
 - (void) fileDownloading:(TDDocument*)document progress:(float)progress {
     
-    //    TDLog(@"%@ - %f",document.title,progress);
+    //    NSLog(@"%@ - %f",document.title,progress);
 	
 	// bounce to external delegate on main thread because probably UI is involved here
     SEL selector = @selector(fileDownloading:progress:);
@@ -1078,12 +1077,12 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 
 - (void) didFinishFileDownload:(TDDocument*)document withCommand:(TDMatchResultCase)theCommand {
 	if (TDMatchResultCaseError == theCommand) {
-		TDLog(@"----> An error occurred while performing a DOWNLOAD or a DELETE operation.");
+		NSLog(@"----> An error occurred while performing a DOWNLOAD or a DELETE operation.");
 	} else {
-		TDLog(@"----> Operation finished successfully.");
+		NSLog(@"----> Operation finished successfully.");
 	}
     
-	TDLog(@"REMOVED an operation in queue.");
+	NSLog(@"REMOVED an operation in queue.");
 	if (queue.operationCount == 0) {
 		// do something
 	}
@@ -1124,7 +1123,7 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 
 - (void) downloadIconFailed:(TDDocument *)document withError:(NSError *)error {
     
-    TDLog(@"[TDDownload] downloadIconFailed for document: %@",document);
+    NSLog(@"[TDDownload] downloadIconFailed for document: %@",document);
     
     // bounce to external delegate
 	if (downloadDelegate && [(NSObject*)downloadDelegate respondsToSelector:@selector(downloadIconFailed:withError:)])
@@ -1141,7 +1140,7 @@ NSInteger groupSort (id doc1, id doc2, void *reverse) {
 - (void) downloadsExecuting:(NSUInteger)numOfDownloads {
 	
 	//IGNORING numOfDownloads not used for now
-	TDLog(@"downloadsExecuting: The number of downloads in queue is: %i",queue.operationCount);
+	NSLog(@"downloadsExecuting: The number of downloads in queue is: %i",queue.operationCount);
 	
 	// SORTING INJECTION
 	if (numOfDownloads == 0) {

@@ -32,6 +32,13 @@ A different license may apply to other software included in this package,
 including GHUnit and Andrew Donoho's Reachability class. Please consult their 
 respective headers for the terms of their individual licenses.
 
+## MKStoreKit
+
+MKStoreKit uses MIT Licensing And so all of my source code can
+                           be used royalty-free into your app. Just make sure that you don’t
+                           remove the copyright notice from the source code if you make your
+                           app open source and in the about page.
+
 ## Reachability
 
 Copyright (c) 2011, Tony Million.

@@ -8,7 +8,7 @@
 
 #import "TDDocument.h"
 #import "TDDownload.h"
-#import "InAppPurchaseManager.h"
+#import "MKStoreManager.h"
 
 #define kDecimalSeparatorComma @","
 #define kDecimalSeparatorDot   @"."
@@ -49,7 +49,7 @@
     NSNumber *group         = [theDict objectForKey:kGroup];
     
     
-//    TDLog(@"Server Version: %@",theDict);		
+//    NSLog(@"Server Version: %@",theDict);		
     
     TDDocument *rem = [[[TDDocument alloc] initWithId:documentId Title:title Filename:filename] autorelease];
     [rem setVersionNumber:vid];
@@ -118,59 +118,59 @@
 
 - (BOOL) isFileDownloaded {
     if (filename == nil) {
-        TDLog(@"isFileDownloaded: ERROR filename is nil. But filename is mandatory!!!.");
+        NSLog(@"isFileDownloaded: ERROR filename is nil. But filename is mandatory!!!.");
         return NO;
     }
     NSString *documentPath = [TDDownloadConfig localResourceFolder];
     documentPath = [documentPath stringByAppendingPathComponent:kPDFFolderName];
     documentPath = [documentPath stringByAppendingPathComponent:filename];
     if (documentPath == nil) return NO;
-//    TDLog(@"[TDDocument] checking document downloaded at path: %@",documentPath);
+//    NSLog(@"[TDDocument] checking document downloaded at path: %@",documentPath);
     BOOL fex = ([[NSFileManager defaultManager] fileExistsAtPath:documentPath]);
-//    if (fex == NO) TDLog(@"[TDDocument] ... FILENAME %@ NOT EXIST",filename); else TDLog(@"[TDDocument] ... FILENAME %@ EXIST",filename);
+//    if (fex == NO) NSLog(@"[TDDocument] ... FILENAME %@ NOT EXIST",filename); else NSLog(@"[TDDocument] ... FILENAME %@ EXIST",filename);
     return fex;
 }
 
 - (BOOL) isIconDownloaded {
     
     if (iconname == nil) {
-        TDLog(@"isIconDownloaded: ICON is nil. There is no need for icon.");
+        NSLog(@"isIconDownloaded: ICON is nil. There is no need for icon.");
         return YES;
     }
     NSString *documentPath = [TDDownloadConfig localResourceFolder];
     documentPath = [documentPath stringByAppendingPathComponent:kIconFolderName];
     documentPath = [documentPath stringByAppendingPathComponent:iconname];
-//    TDLog(@"[TDDocument] checking icon downloaded at path: %@",documentPath);
+//    NSLog(@"[TDDocument] checking icon downloaded at path: %@",documentPath);
     BOOL fex = ([[NSFileManager defaultManager] fileExistsAtPath:documentPath]);
-//    if (fex == NO) TDLog(@"[TDDocument]    NOT EXIST"); else TDLog(@"[TDDocument]     EXIST");
+//    if (fex == NO) NSLog(@"[TDDocument]    NOT EXIST"); else NSLog(@"[TDDocument]     EXIST");
     return fex;
 }
 
 - (BOOL) isPreviewDownloaded {
     if (preview == nil) {
-        TDLog(@"isPreviewDownloaded: PREVIEW is nil. There is no need for preview.");
+        NSLog(@"isPreviewDownloaded: PREVIEW is nil. There is no need for preview.");
         return YES;
     }
     NSString *documentPath = [TDDownloadConfig localResourceFolder];
     documentPath = [documentPath stringByAppendingPathComponent:kPreviewFolderName];
     documentPath = [documentPath stringByAppendingPathComponent:preview];
-//    TDLog(@"[TDDocument] checking PREVIEW document downloaded at path: %@",documentPath);
+//    NSLog(@"[TDDocument] checking PREVIEW document downloaded at path: %@",documentPath);
     BOOL fex = ([[NSFileManager defaultManager] fileExistsAtPath:documentPath]);
-//    if (fex == NO) TDLog(@"[TDDocument]    NOT EXIST"); else TDLog(@"[TDDocument]     EXIST");
+//    if (fex == NO) NSLog(@"[TDDocument]    NOT EXIST"); else NSLog(@"[TDDocument]     EXIST");
     return fex;
 }
 
 - (BOOL) isAssetsDownloaded {
     if (assetsname == nil) {
-        TDLog(@"isAssetsDownloaded: ASSETS is nil. There is no need for assets.");
+        NSLog(@"isAssetsDownloaded: ASSETS is nil. There is no need for assets.");
         return YES;
     }
     NSString *documentPath = [TDDownloadConfig localResourceFolder];
     documentPath = [documentPath stringByAppendingPathComponent:kAssetsFolderName];
     documentPath = [documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@", [self.filename substringWithRange:NSMakeRange(0, [self.filename length]-4)], self.assetsname]];
-//    TDLog(@"[TDDocument] checking ASSETS document downloaded at path: %@",documentPath);
+//    NSLog(@"[TDDocument] checking ASSETS document downloaded at path: %@",documentPath);
     BOOL fex = ([[NSFileManager defaultManager] fileExistsAtPath:documentPath]);
-//    if (fex == NO) TDLog(@"[TDDocument]    NOT EXIST"); else TDLog(@"[TDDocument]     EXIST");
+//    if (fex == NO) NSLog(@"[TDDocument]    NOT EXIST"); else NSLog(@"[TDDocument]     EXIST");
     return fex;
 }
 
@@ -186,8 +186,7 @@
     if ([self isFree]) 
         return YES;
     // controllo se nello standard user defaults è presente e registrato il billing del prodotto
-    NSArray *purchased = [[NSUserDefaults standardUserDefaults] arrayForKey:kDocumentsPurchased];
-    return purchased != nil && [purchased containsObject:productId];
+    
 }
 
 #pragma mark document conversion
@@ -256,7 +255,7 @@
             documentId = formattedNumber;
             [documentId retain];
         } else
-            TDLog(@"[TDDocument] setDocumentId WARNING: received string documentId, formatted the string but no number has received. NO DOCUMENT ID.");
+            NSLog(@"[TDDocument] setDocumentId WARNING: received string documentId, formatted the string but no number has received. NO DOCUMENT ID.");
         [formatter release];
     } else {
         
@@ -286,7 +285,7 @@
             fee = formattedNumber;
             [fee retain];
         } else
-            TDLog(@"[TDDocument] setDocumentId WARNING: received string fee, formatted the string but no number has received. NO DOCUMENT FEE.");
+            NSLog(@"[TDDocument] setDocumentId WARNING: received string fee, formatted the string but no number has received. NO DOCUMENT FEE.");
         [formatter release];
     } else {
         
@@ -311,7 +310,7 @@
             update = formattedDate;
             [update retain];
         } else
-            TDLog(@"[TDDocument] setDocumentId WARNING: received string update, formatted the string but no NSDate has received. NO DOCUMENT UPDATE.");
+            NSLog(@"[TDDocument] setDocumentId WARNING: received string update, formatted the string but no NSDate has received. NO DOCUMENT UPDATE.");
     } else {
         
         update = anUpdate;
@@ -329,7 +328,7 @@
             versionNumber = formattedNumber;
             [versionNumber retain];
         } else
-            TDLog(@"[TDDocument] setDocumentId WARNING: received string version number, formatted the string but no number has received. NO DOCUMENT VERSION NUMBER (vid).");
+            NSLog(@"[TDDocument] setDocumentId WARNING: received string version number, formatted the string but no number has received. NO DOCUMENT VERSION NUMBER (vid).");
         [formatter release];
     } else {
         
