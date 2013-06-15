@@ -8,6 +8,7 @@
 
 #import "TDPurchaseDownload.h"
 #import "TDDownloadOperation.h"
+#import "MKStoreManager.h"
 
 #define BUTTON_NO 0
 #define BUTTON_YES 1
