@@ -181,12 +181,16 @@
 }
 
 - (BOOL) isBought {
-    if (productId == nil) 
-        return YES;
-    if ([self isFree]) 
-        return YES;
-    // controllo se nello standard user defaults è presente e registrato il billing del prodotto
     
+    BOOL _isBoughtCheck = NO;
+    if (productId == nil) 
+        _isBoughtCheck = YES;
+    else if ([self isFree])
+        _isBoughtCheck = YES;
+    // controllo se nello standard user defaults è presente e registrato il billing del prodotto
+    else
+        _isBoughtCheck = [MKStoreManager isFeaturePurchased:productId];
+    return _isBoughtCheck;
 }
 
 #pragma mark document conversion
